@@ -6,11 +6,11 @@
 
 * Still a work in progress, but it works fine for now
 * Upload a photo taken with a smart device
-* Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data from your photo clicking *Remove EXIF Data* button
-* It will prompt a download with the fresh cleaned photo
+* Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data (GPS location etc) from your photo clicking the `Remove EXIF Data` button
+* It will prompt a download with the same file name and type, but without the pesky EXIF data.
 * Save it to your device
 
-* **You need both of these applications to run in the same time (vue app and server) in order to work!**
+**You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
 # For Vue Front End App
 ## Project setup
@@ -42,14 +42,14 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-# For Express server
+# Express Server Setup
 
-## Server setup
+## Install server dependencies
 ```
 npm install
 ```
 
-## Run server
+## Run the server
 ```
 node index.js
 ```
