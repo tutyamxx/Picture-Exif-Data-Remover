@@ -10,7 +10,7 @@
 * It will prompt a download with the fresh cleaned photo
 * Save it to your device
 
-* **You need both of these applications to run in the same time (vue app and server) in order to work!
+* **You need both of these applications to run in the same time (vue app and server) in order to work!**
 
 # For Vue Front End App
 ## Project setup
