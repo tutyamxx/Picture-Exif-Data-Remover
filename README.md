@@ -10,6 +10,8 @@
 * It will prompt a download with the fresh cleaned photo
 * Save it to your device
 
+* **You need both of these applications to run in the same time (vue app and server) in order to work!
+
 # For Vue Front End App
 ## Project setup
 ```
@@ -52,4 +54,4 @@ npm install
 node index.js
 ```
 
-It will display a console log with the following message if it's running *Server runs and is listening on port 5000.*
+It will display a console log with the following message if it's running `Server runs and is listening on port 5000.`
