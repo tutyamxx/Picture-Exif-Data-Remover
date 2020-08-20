@@ -4,6 +4,7 @@
   <img src="https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/exifremover.gif" widht="620" height="400"><br/>
 </p>
 
+* Still a work in progress, but it works fine for now
 * Upload a photo taken with a smart device
 * Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data from your photo clicking *Remove EXIF Data* button
 * It will prompt a download with the fresh cleaned photo
