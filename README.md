@@ -5,10 +5,11 @@
 </p>
 
 * Still a work in progress, but it works fine for now
-* Upload a photo taken with a smart device
-* Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data (GPS location etc) from your photo clicking the `Remove EXIF Data` button
-* It will prompt a download with the same file name and type, but without the pesky EXIF data.
-* Save it to your device
+
+1. Upload a photo taken with a smart device
+2. Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data (GPS location etc) from your photo by clicking the `Remove EXIF Data` button
+3. It will prompt a download with the same file name and type, but without the pesky EXIF data.
+4. Save it to your device
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
