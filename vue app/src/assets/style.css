@@ -1,0 +1,91 @@
+#app
+{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+h1
+{
+    text-align: center;
+}
+
+h3
+{
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#Picture-Upload
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 13px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #42b983;
+}
+
+img.Image-Preview
+{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 0px -1px 18px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 18px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -1px 18px 0px rgba(0,0,0,0.75);
+}
+
+::selection
+{
+    color: #42b983;
+}
+
+#Button-Remove-Exif
+{
+    cursor: pointer;
+    background-color: #42b983;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+#Button-Remove-Exif
+{
+    outline: none;
+    box-shadow: none;
+}
+
+#Preview-Box
+{
+    width: 800px;
+    height: 550px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+#Download-Link
+{
+    text-decoration: none;
+}
