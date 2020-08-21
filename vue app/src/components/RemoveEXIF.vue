@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="bFileUploaded === true">
-            <a id="Download-Link" v-bind:href="'http://localhost:5000/download/' + imageFileName" download><button button id="Button-Remove-Exif">Remove EXIF Data</button></a>
+            <a id="Download-Link" v-bind:href="'http://localhost:5000/download/' + imageFileName" download><button id="Button-Remove-Exif">Remove EXIF Data</button></a>
         </div>
     </div>
 </template>
@@ -14,9 +14,9 @@ export default
     props:
     [
         'imageFile',
-        'response_message',
+        'imageFileName',
         'bFileUploaded',
-        'imageFileName'
+        'response_message'
     ]
 };
 </script>

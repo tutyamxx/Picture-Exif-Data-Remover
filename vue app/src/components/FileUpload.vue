@@ -17,7 +17,7 @@
             </div>
         </form>
 
-        <RemoveEXIF :imageFile="imageFile" :response_message="response_message" :bFileUploaded="bFileUploaded" :imageFileName="imageFileName"/>
+        <RemoveEXIF :imageFile="imageFile" :imageFileName="imageFileName" :bFileUploaded="bFileUploaded" :response_message="response_message" />
     </div>
 </template>
 
@@ -69,7 +69,15 @@ export default
                 if(szImageFile.type.split("/")[0] !== "image")
                 {
                     this.ResetFileUpload();
-                    alert("Sorry, not a valid image!");
+                    alert("Sorry, you can upload images only!");
+
+                    return;
+                }
+
+                if(szImageFile.type.split("/")[1] !== "jpg" && szImageFile.type.split("/")[1] !== "jpeg")
+                {
+                    this.ResetFileUpload();
+                    alert("Sorry, not a valid JPG image!");
 
                     return;
                 }
