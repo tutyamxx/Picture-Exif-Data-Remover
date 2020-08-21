@@ -29,10 +29,10 @@ app.post("/upload", async (req, res) =>
         // --| Check if is an empty file submission
         if(!req.files)
         {
-            res.send(
+            return res.send(
             {
                 status: 204,
-                message: "No file uploaded!"
+                message: "No file provided"
             });
         }
 
@@ -62,7 +62,7 @@ app.post("/upload", async (req, res) =>
     catch(err)
     {
         console.log(err.message)
-        res.status(500).send(err.message);
+        return res.status(500).send(err.message);
     }
 });
 
@@ -78,48 +78,60 @@ app.get("/download/:filename", (req, res) =>
     // --| Server uploads folder
     const szUploadsFolderPath = join(__dirname, "/uploads");
 
-    // --| Read the picture path from the uploads folder
-    const szReadPicturePath = fs.readFileSync(join(szUploadsFolderPath, szRequestedFileName));
+    // --| Uploaded file path
+    const szUploadedPath = join(szUploadsFolderPath, szRequestedFileName);
 
-    // --| Remove EXIF data from the image
-    let CleanedImage = exifremove.remove(szReadPicturePath);
-
-    // --| Original filename but adding "_no_EXIF" at the end  + file extension
-    const CleanedImageFileNamePath = szRequestedFileName.substring(0, szRequestedFileName.lastIndexOf(".")) + "_no_EXIF." + szFileType;
-
-    // --| Create a new picture using the buffer with no EXIF data using original filename but adding "_no_EXIF" at the end  + file extension
-    fs.writeFile(join(szUploadsFolderPath, CleanedImageFileNamePath), CleanedImage, (error) =>
+    if(fs.access(szUploadedPath, fs.constants.F_OK | fs.constants.R_OK, (error) =>
     {
         if(error)
         {
-            console.log(error.message);
+            return res.status(404).send("File is missing, try again?");
         }
 
-        // --| Delete the original uploaded picture from the server after the new photo without EXIF data has been created
-        fs.unlink(join(szUploadsFolderPath, szRequestedFileName), (error) =>
+        // --| Read the picture path from the uploads folder
+        const szReadPicturePath = fs.readFileSync(szUploadedPath);
+
+        // --| Remove EXIF data from the image
+        let CleanedImage = exifremove.remove(szReadPicturePath);
+
+        // --| Original filename but adding "_no_EXIF" at the end  + file extension
+        const CleanedImageFileNamePath = szRequestedFileName.substring(0, szRequestedFileName.lastIndexOf(".")) + "_no_EXIF." + szFileType;
+
+        // --| Create a new picture using the buffer with no EXIF data using original filename but adding "_no_EXIF" at the end  + file extension
+        fs.writeFile(join(szUploadsFolderPath, CleanedImageFileNamePath), CleanedImage, (error) =>
         {
             if(error)
             {
                 console.log(error.message);
             }
 
-            // --| Send the new image download attachment to Vue front end app
-            res.download(join(szUploadsFolderPath, CleanedImageFileNamePath));
-
-            // --| Delete the file after 20 seconds
-            setTimeout(() =>
+            // --| Delete the original uploaded picture from the server after the new photo without EXIF data has been created
+            fs.unlink(join(szUploadsFolderPath, szRequestedFileName), (error) =>
             {
-                fs.unlink(join(szUploadsFolderPath, CleanedImageFileNamePath), (error) =>
+                if(error)
                 {
-                    if (error)
-                    {
-                        console.log(error.message);
-                    }
-                });
+                    console.log(error.message);
+                }
 
-            }, 20000);
+                // --| Send the new image download attachment to Vue front end app
+                res.download(join(szUploadsFolderPath, CleanedImageFileNamePath));
+
+                // --| Delete the file after 20 seconds
+                setTimeout(() =>
+                {
+                    fs.unlink(join(szUploadsFolderPath, CleanedImageFileNamePath), (error) =>
+                    {
+                        if(error)
+                        {
+                            console.log(error.message);
+                        }
+                    });
+
+                }, 20000);
+            });
         });
-    });
+    }));
 });
 
+// --| Log the info on server startup
 app.listen(port, () => console.log(`Server runs and is listening on port ${port}.`));
