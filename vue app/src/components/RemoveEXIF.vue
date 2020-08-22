@@ -1,6 +1,7 @@
 <template>
     <div>
         <div v-if="bFileUploaded === true">
+            <p id="Message-Received">{{ response_message }}</p>
             <a id="Download-Link" v-bind:href="'http://localhost:5000/download/' + imageFileName" download><button id="Button-Remove-Exif">Remove EXIF Data</button></a>
         </div>
     </div>

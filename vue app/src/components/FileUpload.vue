@@ -92,12 +92,17 @@ export default
                     return;
                 }
 
+                if(this.bFileUploaded === true)
+                {
+                    this.bFileUploaded = false;
+                }
+
                 const FileReader = new window.FileReader();
 
                 this.imageFileName = EInput.files[0].name;
                 this.imageFile = EInput.files[0];
 
-                FileReader.onload = (e) => { this.previewImageFile = e.target.result; }
+                FileReader.onloadend = (e) => { this.previewImageFile = e.target.result; }
                 FileReader.readAsDataURL(EInput.files[0]);
             }
 
@@ -141,7 +146,7 @@ export default
                 this.imageFileName = "";
                 this.buttonText = BUTTON_STATUS.ButtonUpload;
                 this.bButtonDisabled = false;
-                this.response_message = "Failed to upload the file with this error -->" + error.message;
+                this.response_message = error.message;
             }
         }
     }
