@@ -12,7 +12,7 @@ describe("Index.vue Component Tests", () =>
         wrapper = mount(Index);
     });
 
-    it("Should render the application Logo with a WIDTH and HEIGHT of 150", () =>
+    it("Should render the application Logo with a WIDTH and HEIGHT of 100", () =>
     {
         const FindLogo = wrapper.find("img");
 
@@ -22,11 +22,11 @@ describe("Index.vue Component Tests", () =>
         expect(FindLogo.attributes("height")).to.be.equal("100");
     });
 
-    it("Should render H1 HTMLtag and not be empty", () =>
+    it("Should render H1 HTML tag and not be empty", () =>
     {
         const H1Tag = wrapper.find("h1");
 
-        expect(H1Tag.text()).to.be.equal("Picture Exif Remover (Remove GPS data from pictures)");
+        expect(H1Tag.text()).to.be.equal("Picture EXIF Remover (Remove GPS data from pictures)");
         expect(H1Tag).to.exist.to.not.be.empty;
     });
 
