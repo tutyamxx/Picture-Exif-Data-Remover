@@ -12,7 +12,7 @@
                 </div>
 
                 <div v-if="bFileUploaded === false">
-                    <button id="Button-Remove-Exif">Upload File</button>
+                    <button id="Button-Remove-Exif" :disabled="bButtonDisabled">{{ buttonText }}</button>
                 </div>
             </div>
         </form>
@@ -24,6 +24,12 @@
 <script>
 import axios from 'axios';
 import RemoveEXIF from './RemoveEXIF.vue';
+
+const BUTTON_STATUS =
+{
+    ButtonUploading: 'Uploading photo',
+    ButtonUpload: 'Upload Photo'
+};
 
 export default
 {
@@ -42,6 +48,8 @@ export default
             imageFileName: "",
             bFileUploaded: false,
             response_message: "",
+            buttonText: BUTTON_STATUS.ButtonUpload,
+            bButtonDisabled: false
         }
     },
 
@@ -56,6 +64,8 @@ export default
             this.imageFile = "";
             this.previewImageFile = "",
             this.bFileUploaded = false;
+            this.bButtonDisabled = false;
+            this.buttonText = BUTTON_STATUS.ButtonUpload;
         },
 
         PreviewPicture: function(event)
@@ -105,6 +115,9 @@ export default
 
             try
             {
+                this.buttonText = BUTTON_STATUS.ButtonUploading;
+                this.bButtonDisabled = true;
+
                 await axios(
                 {
                     method: "POST",
@@ -115,6 +128,8 @@ export default
                 {
                     this.response_message = await res.data.message;
                     this.bFileUploaded = true;
+                    this.buttonText = BUTTON_STATUS.ButtonUpload;
+                    this.bButtonDisabled = false;
                 });
             }
 
@@ -124,6 +139,8 @@ export default
 
                 this.bFileUploaded = false;
                 this.imageFileName = "";
+                this.buttonText = BUTTON_STATUS.ButtonUpload;
+                this.bButtonDisabled = false;
                 this.response_message = "Failed to upload the file with this error -->" + error.message;
             }
         }
