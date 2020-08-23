@@ -29,11 +29,7 @@ app.post("/upload", async (req, res) =>
         // --| Check if is an empty file submission
         if(!req.files)
         {
-            return res.send(
-            {
-                status: 204,
-                message: "No file provided"
-            });
+            return res.status(204).send({ message: "No file provided" });
         }
 
         else
@@ -43,9 +39,8 @@ app.post("/upload", async (req, res) =>
             UploadedPicture.mv('./uploads/' + UploadedPicture.name);
 
             // --| Return a response wit a success upload message and picture information
-            res.send(
+            res.status(200).send(
             {
-                status: 200,
                 message: "File successfully uploaded",
 
                 data:
