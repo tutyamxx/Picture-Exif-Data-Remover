@@ -1,10 +1,10 @@
 # Picture EXIF Remover
 
 <p align="center">
-  <img src="https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/exifremoverv1.gif" width="620" height="400"><br/>
+  <img src="https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/exifremoverv1.gif" width="620" height="500"><br/>
 </p>
 
-* Still a work in progress, but it works fine for now
+# How to
 
 1. Upload a photo taken with a smart device
 2. Remove the [EXIF](https://en.wikipedia.org/wiki/Exif) data (GPS location etc) from your photo by clicking the `Remove EXIF Data` button
