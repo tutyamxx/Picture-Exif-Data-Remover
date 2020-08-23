@@ -17,7 +17,7 @@
             </div>
         </form>
 
-        <RemoveEXIF :imageFile="imageFile" :imageFileName="imageFileName" :bFileUploaded="bFileUploaded" :response_message="response_message" />
+        <RemoveEXIF :imageFile="imageFile" :imageFileName="imageFileName" :bFileUploaded="bFileUploaded" :response_message="response_message" :applicationURL="applicationURL" />
     </div>
 </template>
 
@@ -49,7 +49,10 @@ export default
             bFileUploaded: false,
             response_message: "",
             buttonText: BUTTON_STATUS.ButtonUpload,
-            bButtonDisabled: false
+            bButtonDisabled: false,
+
+            // --| Get app location environment protocol + app location address + server port + server upload path
+            applicationURL: window.location.protocol + "//" + window.location.hostname
         }
     },
 
@@ -118,9 +121,7 @@ export default
                 await axios(
                 {
                     method: "POST",
-
-                    // --| Get app location environment protocol + app location address + server port + server upload path
-                    url: `${window.location.protocol}//${window.location.hostname}:5000/upload`,
+                    url: `${this.applicationURL}:5000/upload`,
                     data: formData
 
                 }).then(async (res) =>
