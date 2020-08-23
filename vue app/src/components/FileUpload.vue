@@ -118,7 +118,9 @@ export default
                 await axios(
                 {
                     method: "POST",
-                    url: "http://localhost:5000/upload",
+
+                    // --| Get app location environment protocol + app location address + server port + server upload path
+                    url: `${window.location.protocol}//${window.location.hostname}:5000/upload`,
                     data: formData
 
                 }).then(async (res) =>
