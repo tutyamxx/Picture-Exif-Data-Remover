@@ -17,6 +17,7 @@ import RemoveEXIF from '@/components/RemoveEXIF.vue';
 export default
 {
     name: 'Index',
+
     components:
     {
         FileUpload,
