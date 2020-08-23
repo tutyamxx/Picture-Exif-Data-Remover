@@ -51,7 +51,7 @@ export default
             buttonText: BUTTON_STATUS.ButtonUpload,
             bButtonDisabled: false,
 
-            // --| Get app location environment protocol + app location address + server port + server upload path
+            // --| Get app location environment protocol + app location address + server port
             applicationURL: window.location.protocol + "//" + window.location.hostname
         }
     },
