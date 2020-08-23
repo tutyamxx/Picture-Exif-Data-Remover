@@ -76,18 +76,10 @@ export default
             {
                 const szImageFile = EInput.files[0];
 
-                if(szImageFile.type.split("/")[0] !== "image")
+                if(szImageFile.type.split("/")[0] !== "image" || szImageFile.type.split("/")[1] !== "jpg" && szImageFile.type.split("/")[1] !== "jpeg")
                 {
                     this.ResetFileUpload();
-                    alert("Sorry, you can upload images only!");
-
-                    return;
-                }
-
-                if(szImageFile.type.split("/")[1] !== "jpg" && szImageFile.type.split("/")[1] !== "jpeg")
-                {
-                    this.ResetFileUpload();
-                    alert("Sorry, not a valid JPG image!");
+                    alert("Sorry, you can upload valid JPEG images only!");
 
                     return;
                 }
@@ -140,7 +132,7 @@ export default
 
             catch(error)
             {
-                console.log(error);
+                console.log(error.message);
 
                 this.bFileUploaded = false;
                 this.imageFileName = "";
