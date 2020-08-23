@@ -1,7 +1,7 @@
 # Picture EXIF Remover
 
 <p align="center">
-  <img src="https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/exifremover.gif" widht="620" height="400"><br/>
+  <img src="https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/exifremoverv1.gif" width="620" height="400"><br/>
 </p>
 
 * Still a work in progress, but it works fine for now
