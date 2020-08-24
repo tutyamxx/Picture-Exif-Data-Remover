@@ -14,10 +14,11 @@
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
-# How to run (starts the Vue.JS app and the Server in the same time)
-```
-npm run start
-```
+# How to run (please make sure you setup your app and server before running this)
+
+| Command  | Information |
+| ------------- | ------------- |
+| npm run start  | Starts the front end app and the server in the same time  |
 
 # For Vue Front End App
 ## Project setup
@@ -40,25 +41,12 @@ npm run build
 npm run test:unit
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 
 # Server Setup
 
 ## Install server dependencies
 ```
 npm install
-```
-
-## Run the server
-```
-node index.js
 ```
 
 It will display a console log with the following message if it's running `Server runs and is listening on port 5000.`
