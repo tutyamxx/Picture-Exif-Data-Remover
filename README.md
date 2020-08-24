@@ -14,6 +14,11 @@
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
+# How to run (starts the Vue.JS app and the Server in the same time)
+```
+npm run start
+```
+
 # For Vue Front End App
 ## Project setup
 ```
