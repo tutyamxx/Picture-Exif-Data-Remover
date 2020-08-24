@@ -14,7 +14,7 @@
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
-# How to run (please make sure you setup your app and server before running this)
+# How to run (please make sure you followed [this guide](https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/README.md#installation))
 
 | Command  | Information |
 | ------------- | ------------- |
@@ -27,17 +27,12 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+### Compiles and minifies for production (use this only when you are using it for production deployment)
 ```
 npm run build
 ```
 
-### Run your unit tests
+### Run your unit tests (use this only if you want to run the tests)
 ```
 npm run test:unit
 ```
