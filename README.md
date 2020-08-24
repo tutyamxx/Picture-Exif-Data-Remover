@@ -14,7 +14,7 @@
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
-# How to run (please make sure you followed [this guide](https://github.com/tutyamxx/Picture-Exif-Data-Remover/blob/master/README.md#installation))
+# How to run (please make sure you followed [the installation guide](#installation))
 
 | Command  | Information |
 | ------------- | ------------- |
