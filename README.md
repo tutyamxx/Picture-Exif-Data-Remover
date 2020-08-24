@@ -44,7 +44,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-# Express Server Setup
+# Server Setup
 
 ## Install server dependencies
 ```
