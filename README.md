@@ -24,6 +24,9 @@
 # Installation
 
 ## 🌎 Setup for front end application
+
+`cd "vue app"` then ⬇️
+
 ```
 npm install
 ```
@@ -42,6 +45,9 @@ npm run test:unit
 ## 🖥️ Setup for the server
 
 ### Install server dependencies
+
+`cd server` then ⬇️
+
 ```
 npm install
 ```
