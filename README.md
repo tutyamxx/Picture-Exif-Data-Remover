@@ -22,7 +22,7 @@
 
 # Installation
 
-## Setup for front end application
+## 🌎 Setup for front end application
 ```
 npm install
 ```
@@ -38,7 +38,7 @@ npm run test:unit
 ```
 
 
-## Setup for the server
+## 🖥️ Setup for the server
 
 ### Install server dependencies
 ```
