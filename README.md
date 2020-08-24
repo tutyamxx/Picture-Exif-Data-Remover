@@ -14,7 +14,8 @@
 
 **You need both of these applications to run in the same time (Vue App and the Server) in order to work!**
 
-# How to run (please make sure you followed [the installation guide](#installation))
+# How to run the entire project (please make sure you followed [the installation guide](#installation))
+ - Open a terminal in `vue app` directory and type ⬇️
 
 | Command  | Information |
 | ------------- | ------------- |
