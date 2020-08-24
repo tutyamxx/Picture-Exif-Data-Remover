@@ -44,5 +44,3 @@ npm run test:unit
 ```
 npm install
 ```
-
-It will display a console log with the following message if it's running `Server runs and is listening on port 5000.`
