@@ -17,7 +17,7 @@
             </div>
         </form>
 
-        <RemoveEXIF :imageFile="imageFile" :imageFileName="imageFileName" :bFileUploaded="bFileUploaded" :response_message="response_message" :applicationURL="applicationURL" />
+        <RemoveEXIF :imageFileName="imageFileName" :bFileUploaded="bFileUploaded" :response_message="response_message" :applicationURL="applicationURL" />
     </div>
 </template>
 
@@ -51,7 +51,7 @@ export default
             buttonText: BUTTON_STATUS.ButtonUpload,
             bButtonDisabled: false,
 
-            // --| Get app location environment protocol + app location address + server port
+            // --| Get app location environment protocol + app location address (Example: http// or https// + ip or localhost or localip)
             applicationURL: window.location.protocol + "//" + window.location.hostname
         }
     },

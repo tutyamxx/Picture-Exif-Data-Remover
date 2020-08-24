@@ -13,13 +13,31 @@ export default
     name: 'RemoveEXIF',
 
     props:
-    [
-        'imageFile',
-        'imageFileName',
-        'bFileUploaded',
-        'response_message',
-        'applicationURL'
-    ]
+    {
+        imageFileName:
+        {
+            type: String,
+            required: true
+        },
+
+        bFileUploaded:
+        {
+            type: Boolean,
+            required: true
+        },
+
+        response_message:
+        {
+            type: String,
+            required: true
+        },
+
+        applicationURL:
+        {
+            type: String,
+            required: true
+        }
+    }
 };
 </script>
 
