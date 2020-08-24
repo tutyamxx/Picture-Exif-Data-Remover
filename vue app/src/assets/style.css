@@ -203,3 +203,11 @@ img.Image-Preview
 {
     background: #42b983;
 }
+
+input[type='file']
+{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #42b983;
+}
