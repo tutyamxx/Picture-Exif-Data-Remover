@@ -20,8 +20,9 @@
 | ------------- | ------------- |
 | npm run start  | Starts the front end app and the server in the same time  |
 
-# For Vue Front End App
-## Project setup
+# Installation
+
+## Setup for front end application
 ```
 npm install
 ```
@@ -42,9 +43,9 @@ npm run test:unit
 ```
 
 
-# Server Setup
+## Setup for the server
 
-## Install server dependencies
+### Install server dependencies
 ```
 npm install
 ```
