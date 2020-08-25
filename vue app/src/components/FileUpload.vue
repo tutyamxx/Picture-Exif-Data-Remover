@@ -2,7 +2,7 @@
     <div>
         <form id="Upload-Form" @submit.prevent="photoSubmit" enctype="multipart/form-data">
             <div>
-                <input type="file" id="Picture-Upload" name="PictureUpload" ref="ResetFileUpload" @change="PreviewPicture" accept="image/jpeg">
+                <input type="file" id="Picture-Upload" name="PictureUpload" ref="ResetFileUpload" @change="PreviewPicture" accept="image/jpeg" tabindex="-1">
             </div>
 
             <div v-if="previewImageFile.length > 0">

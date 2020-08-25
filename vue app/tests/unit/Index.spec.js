@@ -16,6 +16,7 @@ describe("Index.vue Component Tests", () =>
     {
         const FindLogo = wrapper.find("img");
 
+        expect(FindLogo.exists()).to.be.true;
         expect(FindLogo.attributes("alt")).to.be.equal("App Logo").and.to.not.be.empty;
         expect(FindLogo.attributes("src")).to.be.equal(LogoImage);
         expect(FindLogo.attributes("width")).to.be.equal("100");
